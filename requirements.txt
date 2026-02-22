@@ -6,3 +6,8 @@ scikit-learn
 catboost
 xgboost
 Flask
+
+#to automatically trigger setup.py when installing the packages in requirements.txt 
+
+
+-e .
