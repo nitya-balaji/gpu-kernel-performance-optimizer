@@ -2,8 +2,6 @@ import sys
 from src.logger import logging #this will create a log file (based on steps outlined in logger.py script) for an raised errors (if not it will just raise the custom exception in the terminal)
 
 #function that formats the error message 
-
-#function that formats the error message 
 def error_message_detail(error,error_detail:sys): #error = actual error, error_detail = details about the error which can be found bc we imported the sys module (it will grab the details of the error that is stored in Python's memory)
     _,_,exc_tb=error_detail.exc_info() #exc_info() returns three things: type, value, and traceback -> we only care about traceback (so we use _ to ignore the first two) - exec_tb is the object that contains the info about where exactly the code failed
     file_name=exc_tb.tb_frame.f_code.co_filename #finding the file name of where the error came from by looking into the exc_tb object
