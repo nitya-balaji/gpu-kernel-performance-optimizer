@@ -101,8 +101,8 @@ class DataTransformation:
 
             logging.info(f"Saved preprocessing object.")
 
-            #save the "Preprocessor Machine"
-            #we save the 'obj' as a .pkl file so we don't lose the learned scaling rules.
+            #save the preprocessing object as a .pkl file
+            #why: we save the 'obj' as a .pkl file so we don't lose the learned scaling rules.
             save_object(
 
                 file_path=self.data_transformation_config.preprocessor_object_file_path,

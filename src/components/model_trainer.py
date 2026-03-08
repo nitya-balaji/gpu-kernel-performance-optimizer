@@ -97,10 +97,10 @@ class ModelTrainer:
 
             logging.info(f"Best model found: {best_model_name} with R2 Score: {best_model_score}")
 
-            # Save the "Brain"
+            #save best_model object as .pkl file
             save_object(
                 file_path=self.model_trainer_config.trained_model_file_path,
-                obj=best_model #saving the best_model trained object as a .pkl file
+                obj=best_model 
             )
 
             predicted = best_model.predict(X_test) #list of all predictions made by the model for the X_test data set
