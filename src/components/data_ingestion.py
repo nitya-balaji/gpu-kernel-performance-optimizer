@@ -47,6 +47,6 @@ if __name__ == "__main__":
     obj=DataIngestion()
     train_data, test_data=obj.initiate_data_ingestion()
     data_transformation = DataTransformation() #start next step in pipeline after data ingestion complete
-    train_arr, test_arr, _=data_transformation.initiate_data_transformation(train_data, test_data)
-    model_trainer=ModelTrainer()
+    train_arr, test_arr, _=data_transformation.initiate_data_transformation(train_data, test_data) #_ to ignore file path to preprocessor .pkl file
+    model_trainer=ModelTrainer() #start next step in pipeline after data transformation complete
     print(model_trainer.initiate_model_trainer(train_arr, test_arr))
