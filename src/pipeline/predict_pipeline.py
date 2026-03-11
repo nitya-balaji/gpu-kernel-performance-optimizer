@@ -13,10 +13,10 @@ class PredictPipeline:
             preprocessor_path="artifacts/preprocessor.pkl"
             model=load_object(file_path=model_path)
             preprocessor=load_object(file_path=preprocessor_path)
-            #scale data inputted by user
-            data_scaled=preprocessor.trasnform(features)
-            preds=model.predict(data_scaled)
-            return preds
+            #scaling the data inputted by user
+            data_scaled=preprocessor.transform(features)
+            preds=model.predict(data_scaled) #model looks at scaled values from above line and provides a value for runtime
+            return preds #return the answer back to the website
         except Exception as e:
             raise CustomException(e,sys)
         
@@ -40,9 +40,10 @@ class CustomData:
         self.SA=SA
         self.SB=SB
     
-    #turning all inputs provided by user will be mapped to each variable to create a dataframe (data frame is the form our model is used to dealing with)
+    
     def get_data_as_data_frame(self):
         try:
+            #maps variables to exact column names the model saw during training
             custom_data_input_dict = {
                 "MWG": [self.MWG],
                 "NWG": [self.NWG],
@@ -59,7 +60,7 @@ class CustomData:
                 "SA":[self.SA],
                 "SB":[self.SB],
             }
-            return pd.DataFrame(custom_data_input_dict)
+            return pd.DataFrame(custom_data_input_dict) #turns dictionary into 1-row dataframe (aka a table)
         
         except Exception as e:
             raise CustomException(e,sys)
