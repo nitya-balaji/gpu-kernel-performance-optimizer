@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPU Performance Predictor</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Visual feedback for invalid inputs */
+        input:invalid {
+            border: 2px solid #ef4444;
+            background-color: #fef2f2;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-900">
 
@@ -28,14 +35,20 @@
                     
                     <div>
                         <label class="block text-sm font-medium text-gray-700">MWG (Work-group size)</label>
-                        <p class="text-xs text-gray-400 mb-1">Range: 8 - 256 | Multiple of 8</p>
-                        <input type="number" name="MWG" min="8" max="256" step="8" required title="Must be 8-256 and a multiple of 8" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:invalid:border-red-500">
+                        <p class="text-xs text-gray-400 mb-1">Range: 8 - 256 | Multiples of 8</p>
+                        <input type="number" name="MWG" min="8" max="256" step="8" required 
+                               oninvalid="this.setCustomValidity('Must be between 8-256 and a multiple of 8')"
+                               oninput="this.setCustomValidity('')"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700">NWG (Work-group size)</label>
-                        <p class="text-xs text-gray-400 mb-1">Range: 8 - 256 | Multiple of 8</p>
-                        <input type="number" name="NWG" min="8" max="256" step="8" required title="Must be 8-256 and a multiple of 8" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:invalid:border-red-500">
+                        <p class="text-xs text-gray-400 mb-1">Range: 8 - 256 | Multiples of 8</p>
+                        <input type="number" name="NWG" min="8" max="256" step="8" required 
+                               oninvalid="this.setCustomValidity('Must be between 8-256 and a multiple of 8')"
+                               oninput="this.setCustomValidity('')"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                     <div>
@@ -76,14 +89,20 @@
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700">VWM (Vector width M)</label>
-                        <p class="text-xs text-gray-400 mb-1">Range: 8 - 8 | Multiple of 8</p>
-                        <input type="number" name="VWM" min="8" max="8" step="8" required title="Must be a multiple of 8" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:invalid:border-red-500">
+                        <p class="text-xs text-gray-400 mb-1">Range: 8 | Multiple of 8</p>
+                        <input type="number" name="VWM" min="8" max="8" step="8" required 
+                               oninvalid="this.setCustomValidity('Must be 8')"
+                               oninput="this.setCustomValidity('')"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700">VWN (Vector width N)</label>
-                        <p class="text-xs text-gray-400 mb-1">Range: 8 - 8 | Multiple of 8</p>
-                        <input type="number" name="VWN" min="8" max="8" step="8" required title="Must be a multiple of 8" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:invalid:border-red-500">
+                        <p class="text-xs text-gray-400 mb-1">Range: 8 | Multiple of 8</p>
+                        <input type="number" name="VWN" min="8" max="8" step="8" required 
+                               oninvalid="this.setCustomValidity('Must be 8')"
+                               oninput="this.setCustomValidity('')"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                     <div>
