@@ -28,72 +28,86 @@
                     
                     <div>
                         <label class="block text-sm font-medium text-gray-700">MWG (Work-group size)</label>
-                        <input type="number" step="any" name="MWG" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <p class="text-xs text-gray-400 mb-1">Range: 8 - 256 | Multiple of 8</p>
+                        <input type="number" name="MWG" min="8" max="256" step="8" required title="Must be 8-256 and a multiple of 8" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:invalid:border-red-500">
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700">NWG (Work-group size)</label>
-                        <input type="number" step="any" name="NWG" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <p class="text-xs text-gray-400 mb-1">Range: 8 - 256 | Multiple of 8</p>
+                        <input type="number" name="NWG" min="8" max="256" step="8" required title="Must be 8-256 and a multiple of 8" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:invalid:border-red-500">
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700">KWG (Work-group size)</label>
-                        <input type="number" step="any" name="KWG" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <p class="text-xs text-gray-400 mb-1">Range: 1 - 64</p>
+                        <input type="number" name="KWG" min="1" max="64" step="1" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700">MDIMC (Local work-group size)</label>
-                        <input type="number" step="any" name="MDIMC" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <p class="text-xs text-gray-400 mb-1">Range: 1 - 32</p>
+                        <input type="number" name="MDIMC" min="1" max="32" step="1" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700">NDIMC</label>
-                        <input type="number" step="any" name="NDIMC" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <p class="text-xs text-gray-400 mb-1">Range: 1 - 32</p>
+                        <input type="number" name="NDIMC" min="1" max="32" step="1" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
-                    
+
                     <div>
                         <label class="block text-sm font-medium text-gray-700">MDIMA</label>
-                        <input type="number" step="any" name="MDIMA" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <p class="text-xs text-gray-400 mb-1">Range: 1 - 32</p>
+                        <input type="number" name="MDIMA" min="1" max="32" step="1" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700">NDIMB</label>
-                        <input type="number" step="any" name="NDIMB" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <p class="text-xs text-gray-400 mb-1">Range: 1 - 32</p>
+                        <input type="number" name="NDIMB" min="1" max="32" step="1" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                     <div>
                         <label class="block text-sm font-medium text-gray-700">KWI</label>
-                        <input type="number" step="any" name="KWI" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <p class="text-xs text-gray-400 mb-1">Range: 1 - 64</p>
+                        <input type="number" name="KWI" min="1" max="64" step="1" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">VWM</label>
-                        <input type="number" step="any" name="VWM" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <label class="block text-sm font-medium text-gray-700">VWM (Vector width M)</label>
+                        <p class="text-xs text-gray-400 mb-1">Range: 8 - 8 | Multiple of 8</p>
+                        <input type="number" name="VWM" min="8" max="8" step="8" required title="Must be a multiple of 8" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:invalid:border-red-500">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">VWN</label>
-                        <input type="number" step="any" name="VWN" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <label class="block text-sm font-medium text-gray-700">VWN (Vector width N)</label>
+                        <p class="text-xs text-gray-400 mb-1">Range: 8 - 8 | Multiple of 8</p>
+                        <input type="number" name="VWN" min="8" max="8" step="8" required title="Must be a multiple of 8" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 focus:invalid:border-red-500">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">STRM</label>
-                        <input type="number" step="any" name="STRM" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <label class="block text-sm font-medium text-gray-700">STRM (Stride M)</label>
+                        <p class="text-xs text-gray-400 mb-1">Range: 0 - 1</p>
+                        <input type="number" name="STRM" min="0" max="1" step="1" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">STRN</label>
-                        <input type="number" step="any" name="STRN" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <label class="block text-sm font-medium text-gray-700">STRN (Stride N)</label>
+                        <p class="text-xs text-gray-400 mb-1">Range: 0 - 1</p>
+                        <input type="number" name="STRN" min="0" max="1" step="1" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">SA</label>
-                        <input type="number" step="any" name="SA" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <label class="block text-sm font-medium text-gray-700">SA (Shared memory A)</label>
+                        <p class="text-xs text-gray-400 mb-1">Range: 0 - 1</p>
+                        <input type="number" name="SA" min="0" max="1" step="1" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">SB</label>
-                        <input type="number" step="any" name="SB" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
+                        <label class="block text-sm font-medium text-gray-700">SB (Shared memory B)</label>
+                        <p class="text-xs text-gray-400 mb-1">Range: 0 - 1</p>
+                        <input type="number" name="SB" min="0" max="1" step="1" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500">
                     </div>
 
                 </div>
@@ -106,6 +120,5 @@
             </form>
         </div>
     </div>
-
 </body>
 </html>
