@@ -4,7 +4,7 @@ import pandas as pd
 
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData,PredictPipeline
-
+from src.pipeline.train_pipeline import TrainPipeline
 application=Flask(__name__) #WSGI application
 app=application
 
@@ -17,6 +17,14 @@ VALIDATION_RULES = {
 def index():
     return render_template("index.html")
 
+@app.route("/train")
+def train():
+    try:
+        pipeline=TrainPipeline()
+        r2_score = pipeline.run_pipeline()
+        return f"Training complete! R2 Score: {r2_score}"
+    except Exception as e:
+        return f"Training failed: {str(e)}"
 @app.route("/predictdata", methods=["GET", "POST"])
 def predict_datapoint():
     if request.method=="GET": #user clicked a link to see the form (showing home.html - empty form)
