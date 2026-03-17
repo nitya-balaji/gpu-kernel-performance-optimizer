@@ -131,12 +131,8 @@ The GitHub Actions workflow (`.github/workflows/main.yaml`) automates the follow
 
 ---
 
-## Web App Screenshots
-### Homepage
-![Homepage](assets/homepage.png)
+## Web App Preview
+<img src="assets/homepage.png" width="600"/>
+<img src="assets/predict2.png" width="600"/>
+<img src="assets/runtime.png" width="600"/>
 
-### Prediction Form
-![Prediction Form](assets/predict2.png)
-
-### Prediction Result
-![Prediction Result](assets/runtime.png)
