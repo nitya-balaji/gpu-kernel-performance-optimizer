@@ -17,7 +17,7 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
             
             #cv=3 - split training data into 3 chunks for cross-validation 
             #GridSearch will choose all provided hyperparameter combinations on these splits (.fit() - next line actually tests these combos by running them)
-            gs = GridSearchCV(model, para, cv=3, n_jobs=-1, verbose=1) 
+            gs = GridSearchCV(model, para, cv=2, n_jobs=-1, verbose=1) 
             gs.fit(X_train, y_train) #try every combo of params to find best outcome
 
         

@@ -48,32 +48,31 @@ class ModelTrainer:
 
             params = {
                 "Decision Tree": {
-                    'criterion': ['squared_error', 'friedman_mse', 'poisson'],
+                    'criterion': ['squared_error'],
                 },
                 "Random Forest": {
-                    'n_estimators': [8, 16, 32, 64, 128]
+                    'n_estimators': [8, 16]
                 },
                 "Gradient Boosting": {
-                    'learning_rate': [0.1, 0.01, 0.05],
-                    'subsample': [0.6, 0.7, 0.8],
-                    'n_estimators': [8, 16, 32, 64]
+                    'learning_rate': [0.1],
+                    'subsample': [0.6],
+                    'n_estimators': [8, 16]
                 },
                 "Linear Regression": {},
                 "XGBRegressor": {
-                    'learning_rate': [0.1, 0.01, 0.05],
-                    'n_estimators': [8, 16, 32, 64]
+                    'learning_rate': [0.1],
+                    'n_estimators': [8, 16]
                 },
                 "CatBoosting Regressor": {
-                    'depth': [6, 8],
-                    'learning_rate': [0.01, 0.05, 0.1],
-                    'iterations': [30, 50]
+                    'depth': [6],
+                    'learning_rate': [0.1],
+                    'iterations': [30]
                 },
                 "AdaBoost Regressor": {
-                    'learning_rate': [0.1, 0.01, 0.5],
-                    'n_estimators': [8, 16, 32, 64]
+                    'learning_rate': [0.1],
+                    'n_estimators': [8, 16]
                 }
             }
-
             #this will give us am R^2 score for each model (using the evaluate_models function)
             model_report: dict = evaluate_models(
                 X_train=X_train, y_train=y_train, X_test=X_test, y_test=y_test,
