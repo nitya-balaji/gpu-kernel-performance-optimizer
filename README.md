@@ -33,17 +33,17 @@ The notebook served as the experimental ground for preprocessing and model selec
 - **Preprocessing** — Applied `StandardScaler` to normalize all 14 numerical features, accounting for the wide range of parameter values across different kernel configurations
 - **Model Selection** — Evaluated multiple regression approaches suited to the non-linear complexity of GPU performance data, including Random Forest, XGBoost, CatBoost, Gradient Boosting, Decision Tree, Linear Regression, and AdaBoost
 - **Evaluation** — Measured model performance using R² score to assess how closely predictions matched actual measured runtimes
-- **Pickling** — Saved the best trained model as `model.pkl` for use in the production inference pipeline
+- **Pickling** — Saved the best trained model as `model.pkl` for use in the production prediction pipeline
 
 ### Production ML Pipeline
 
 - **Data Ingestion (`src/components/data_ingestion.py`)**
   - Automated loading of raw CSV data from `notebook/data/sgemm_product_v2.csv`
-  - 80/20 train-test split saved to `artifacts/` for downstream processing
+  - 80/20 train-test split saved to `artifacts/` for use in data transformation and model training
 
 - **Data Transformation (`src/components/data_transformation.py`)**
   - Standardized all 14 numerical input features using a preprocessing pipeline
-  - Saved the fitted preprocessor as `artifacts/preprocessor.pkl` to ensure identical scaling rules are applied at inference time
+  - Saved the fitted preprocessor as `artifacts/preprocessor.pkl` to ensure identical scaling rules are applied when making predictions
 
 - **Model Training (`src/components/model_trainer.py`)**
   - Trained 7 regression models with `GridSearchCV` hyperparameter tuning and 2-fold cross-validation
@@ -55,8 +55,8 @@ The notebook served as the experimental ground for preprocessing and model selec
   - Triggered on demand via the `/train` route in the Flask app
 
 - **Prediction Pipeline (`src/pipeline/predict_pipeline.py`)**
-  - Separate inference pipeline for real-time predictions
-  - Loads `model.pkl` and `preprocessor.pkl` to ensure consistent preprocessing between training and inference
+  - Separate prediction pipeline for real-time predictions
+  - Loads `model.pkl` and `preprocessor.pkl` to ensure consistent preprocessing between training and prediction
   - Accepts user input from the Flask web app and returns a predicted runtime in milliseconds
 
 ### Model Deployment
