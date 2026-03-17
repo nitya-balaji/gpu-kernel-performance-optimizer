@@ -132,5 +132,11 @@ The GitHub Actions workflow (`.github/workflows/main.yaml`) automates the follow
 ---
 
 ## Web App Screenshots
+### Homepage
+![Homepage](assets/homepage.png)
 
-*(Add your screenshots here)*
+### Prediction Form
+![Prediction Form](assets/predict2.png)
+
+### Prediction Result
+![Prediction Result](assets/runtime.png)
