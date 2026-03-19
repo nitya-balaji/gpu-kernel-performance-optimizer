@@ -66,7 +66,7 @@ The notebook served as the experimental ground for preprocessing and model selec
 - Automated the full build and deployment cycle using **GitHub Actions CI/CD** with a self-hosted runner on EC2
 
 > ⚠️ **Note on Cloud Deployment**
-> To avoid ongoing cloud charges:
+> - To avoid ongoing cloud charges:
 > - The EC2 instance has been deleted
 > - The self-hosted GitHub Actions runner has been removed
 >
