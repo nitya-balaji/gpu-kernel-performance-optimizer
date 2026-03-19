@@ -33,7 +33,6 @@ The notebook served as the experimental ground for preprocessing and model selec
 - **Preprocessing** — Applied `StandardScaler` to normalize all 14 numerical features, accounting for the wide range of parameter values across different kernel configurations
 - **Model Selection** — Evaluated multiple regression approaches suited to the non-linear complexity of GPU performance data, including Random Forest, XGBoost, CatBoost, Gradient Boosting, Decision Tree, Linear Regression, and AdaBoost
 - **Evaluation** — Measured model performance using R² score to assess how closely predictions matched actual measured runtimes
-- **Pickling** — Saved the best trained model as `model.pkl` for use in the production prediction pipeline
 
 ### Production ML Pipeline
 
