@@ -21,18 +21,18 @@ The dataset contains 14 OpenCL SGEMM tuning parameters (`MWG`, `NWG`, `KWG`, `MD
 
 Before training any model, a thorough analysis of the dataset was conducted to understand the underlying structure of GPU kernel performance:
 
-- **Feature Profiling** — Examined each of the 14 GPU architecture parameters (work-group sizes, vector widths, memory access flags) against the target variable `Runtime` to understand their individual impact on execution time
-- **Correlation Analysis** — Identified non-linear relationships between parameters such as `MDIMC`, `NDIMC`, and `Runtime`, revealing that simple linear models would be insufficient for this dataset
-- **Outlier Detection** — Flagged configurations that caused abnormal slowdowns to prevent the model from learning from noisy, unrepresentative data points
-- **Visualization** — Used scatter plots and heatmaps to identify which kernel tuning parameters most strongly influence GPU execution speed
+- **Feature Profiling** - Examined each of the 14 GPU architecture parameters (work-group sizes, vector widths, memory access flags) against the target variable `Runtime` to understand their individual impact on execution time
+- **Correlation Analysis** - Identified non-linear relationships between parameters such as `MDIMC`, `NDIMC`, and `Runtime`, revealing that simple linear models would be insufficient for this dataset
+- **Outlier Detection** - Flagged configurations that caused abnormal slowdowns to prevent the model from learning from noisy, unrepresentative data points
+- **Visualization** - Used scatter plots and heatmaps to identify which kernel tuning parameters most strongly influence GPU execution speed
 
 ### Model Training (`notebook/model_training.ipynb`)
 
 The notebook served as the experimental ground for preprocessing and model selection before the production pipeline was built:
 
-- **Preprocessing** — Applied `StandardScaler` to normalize all 14 numerical features, accounting for the wide range of parameter values across different kernel configurations
-- **Model Selection** — Evaluated multiple regression approaches suited to the non-linear complexity of GPU performance data, including Random Forest, XGBoost, CatBoost, Gradient Boosting, Decision Tree, Linear Regression, and AdaBoost
-- **Evaluation** — Measured model performance using R² score to assess how closely predictions matched actual measured runtimes
+- **Preprocessing** - Applied `StandardScaler` to normalize all 14 numerical features, accounting for the wide range of parameter values across different kernel configurations
+- **Model Selection** - Evaluated multiple regression approaches suited to the non-linear complexity of GPU performance data, including Random Forest, XGBoost, CatBoost, Gradient Boosting, Decision Tree, Linear Regression, and AdaBoost
+- **Evaluation** - Measured model performance using R² score to assess how closely predictions matched actual measured runtimes
 
 ### Production ML Pipeline
 
@@ -115,9 +115,9 @@ Enter your GPU kernel configuration parameters and click **Predict Runtime** to 
 
 The GitHub Actions workflow (`.github/workflows/main.yaml`) automates the following on every push to `main`:
 
-1. **Continuous Integration** — Lint and unit test checks run on `ubuntu-latest`
-2. **Continuous Delivery** — Docker image is built and pushed to Amazon ECR
-3. **Continuous Deployment** — EC2 self-hosted runner pulls the latest image from ECR and runs the updated container on port 5000
+1. **Continuous Integration** - Lint and unit test checks run on `ubuntu-latest`
+2. **Continuous Delivery** - Docker image is built and pushed to Amazon ECR
+3. **Continuous Deployment** - EC2 self-hosted runner pulls the latest image from ECR and runs the updated container on port 5000
 
 ---
 
