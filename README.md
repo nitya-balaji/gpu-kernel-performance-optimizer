@@ -101,7 +101,7 @@ Wait for the page to display:
 ```
 Training complete! R2 Score: 0.9999...
 ```
-⚠️ This step trains all 7 models and selects the best one — it may take several minutes to complete. Do not close the browser tab until training is finished. This must be completed before making any predictions.
+⚠️ This step trains all 7 models and selects the best one - it may take several minutes to complete. Do not close the browser tab until training is finished. This must be completed before making any predictions.
 
 **5. Navigate to:**
 ```
